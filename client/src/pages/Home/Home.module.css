@@ -1,0 +1,25 @@
+.top_container{
+    display: flex;
+    justify-content: space-between;
+}
+.Home_container{
+    align-items: center;
+    margin-left:200px;
+    margin-right:200px ;
+    border-bottom: 1px solid gray;
+}
+.username{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+.one_question{
+    display: flex;
+    gap: 30px;
+}
+.question{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+   
+}

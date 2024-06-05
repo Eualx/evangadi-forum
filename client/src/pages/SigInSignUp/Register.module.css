@@ -1,0 +1,148 @@
+.Loginsign{
+  background-image: url("../../assets/img/10001.svg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  /* background-color: #F8F8F8; */
+}
+
+.Signup_container {
+  display: flex;
+  width: 960px;
+  margin: auto;
+  padding: 10px;
+}
+.left_Signup_container {
+  text-align: center;
+  padding-right: 10px;
+}
+
+.left_Signup_container p {
+  font-size: 12px;
+  margin: 15px;
+}
+.left_Signup_container a {
+  color: #fba303;
+  font-size: 12px;
+}
+.left_Signup_container form {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 380px;
+  height: 400px;
+  padding: 30px 20px 0px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  background-color: white;
+}
+label {
+  position: absolute;
+  right: 40px;
+  padding: 5px;
+  color: #717479;
+}
+label:hover {
+  color: #fba303;
+}
+input {
+  width: 330px;
+  padding: 7px;
+  outline-color: #fba303;
+}
+.first_last_name input {
+  width: 150px;
+}
+.first_last_name {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+}
+button {
+  color: white;
+}
+.left_Signup_container button {
+  background-color: #0b5ed7;
+  padding: 8px;
+  width: 350px;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: none;
+}
+.right_Signup_container {
+  margin-left: 20px;
+}
+.right_Signup_container h5 {
+  color: #fba303;
+  margin: 70px 0px 20px;
+}
+.right_Signup_container h1 {
+  margin: 0px 0px 5px;
+}
+.right_Signup_container button {
+  background-color: #fba303;
+  margin-top: 20px;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 3px;
+}
+
+.Login_container{
+  display: flex;
+  width: 960px;
+  margin: auto;
+  padding: 100px;
+}
+.left_Login_container{
+  text-align: center;
+  padding-right: 10px;
+}
+.left_Login_container h4{
+  margin-top: 60px;
+}
+.left_Login_container p{
+  font-size: 12px;
+  margin: 15px;
+}
+.left_Login_container a{
+  color: #FBA303;
+  font-size: 12px;
+}
+.left_Login_container form{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 380px;
+height: 380px;
+  padding: 60px 20px 0px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  background-color: white;
+}
+label{
+  position: absolute;
+ right:40px ;
+ padding:5px;
+ color: #717479;
+}
+label:hover{
+  color: #FBA303;
+}
+input{
+  width: 330px;
+  padding: 7px;
+ 
+  
+}
+.left_Login_container button{
+  background-color:#FBA303 ;
+ 
+  color: white;
+ 
+}
+.left_Login_container button{
+  padding: 8px 50px;
+  border-radius: 3px  ;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+}
