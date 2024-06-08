@@ -27,8 +27,10 @@
 }
 .Question_Des input{
     width: 620px;
-    height: 100px;
+    /* height: 100px; */
+    padding-bottom: 100px;
     margin-left: 20px;
     margin-bottom: 20px;
 }
+
 

@@ -3,13 +3,15 @@
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
-  /* background-color: #F8F8F8; */
+  background-size: cover;
+  background-color: #F8F8F8;
 }
 
 .Signup_container {
   display: flex;
-  width: 960px;
-  margin: auto;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px;
 }
 .left_Signup_container {
@@ -66,7 +68,7 @@ button {
   width: 350px;
   border-radius: 3px;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   border: none;
 }
 .right_Signup_container {
@@ -77,14 +79,19 @@ button {
   margin: 70px 0px 20px;
 }
 .right_Signup_container h1 {
-  margin: 0px 0px 5px;
+  margin: 0px 0px 15px;
+  font-size: 30px;
 }
 .right_Signup_container button {
   background-color: #fba303;
   margin-top: 20px;
-  padding: 7px 20px;
+  padding: 7px 30px;
+  width: 200px;
   border: none;
   border-radius: 3px;
+}
+.right_Signup_container p {
+font-size: 18px;
 }
 
 .Login_container{
@@ -134,15 +141,12 @@ input{
   
 }
 .left_Login_container button{
-  background-color:#FBA303 ;
- 
-  color: white;
- 
-}
-.left_Login_container button{
-  padding: 8px 50px;
+  width: 350px;
+  padding: 8px ;
   border-radius: 3px  ;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 10px;
   border: none;
+  background-color:#0b5ed7; ;
+  color: white;
 }

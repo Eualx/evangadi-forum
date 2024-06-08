@@ -1,7 +1,11 @@
-.answer_container{
-    align-items: center;
-    margin: auto;
-    width: 960px;
+.username{
+    background-color:#E8F0FE;
+    display: flex;
+    gap: 30px;
+    margin: 20px 100px 30px;
+    padding: 20px;
+    margin-bottom: 5px;
+   
 }
 .form{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -12,20 +16,48 @@
     text-decoration: none;
     position: relative;
     background-color: white;
+    background-color:#E8F0FE;
+    margin: auto;
 }
 .newAnswer_Des input{
     width: 620px;
-    height: 100px;
+    padding-bottom: 100px;
     margin-left: 20px;
     margin-bottom: 20px;
 }
-.username{
-    border-top: 1px solid gray;
-    display: flex;
-    gap: 30px;
-    padding: 20px 0px 30px;
-}
+
 .public{
     text-align: center;
     padding: 10px;
+    align-items: center;
 }
+.all_answer {
+    scroll-margin: 20;
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto;
+    border: 1px solid #ccc; 
+/* Optional: to visually separate the scrollable area */
+  padding: 10px;}
+
+.title{
+    margin-left: 150px;
+    padding: 20px;
+}
+.answer{
+    align-items: center;
+    padding-top: 20px;
+}
+.public h3{
+    padding-right: 200px;
+}
+h2{
+    padding-left: 200px;
+}
+.textarea {
+    width: 100%; 
+    min-height: 100px; 
+    max-height: 200px;
+    overflow-y: auto; 
+    box-sizing: border-box; 
+    resize: vertical; 
+  }

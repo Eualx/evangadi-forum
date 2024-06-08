@@ -1,16 +1,25 @@
-import {useRef,useState,useEffect} from 'react'
+import {useRef,useState,useEffect, useReducer} from 'react'
 import classes from './QuestionAns.module.css'
 import { Link, useParams} from 'react-router-dom'
 import { VscAccount } from "react-icons/vsc";
 import Layout from '../Layout/Layout';
 import axios from '../Axios/axiosConfig'
-function QuestionAns() {
+import QA from "../../assets/img/icons8-answer-58.png"
+
+function QuestionAns({title, description}) {
 
   const answerDom=useRef()
   const token = localStorage.getItem("token")
   const {questionid}=useParams()
-
   const [values, setValues]=useState([])
+  const [details, setDetail]=useState([])
+  const [render,forceUpdate]=useReducer(x=>x+1)
+
+
+  //
+// const[author,setauthors]=useState([])
+
+
   useEffect(()=>{
     if (questionid && token) {
   axios.get(`/data/combined/${questionid}`,  { headers:{
@@ -31,7 +40,33 @@ function QuestionAns() {
        
       })
     }
-      },[questionid, token] )
+      },[questionid, token,render] )
+
+
+      useEffect(()=>{
+        // if (questionid && token) {
+      axios.get(`/data/combineddetail/${questionid}`,  { headers:{
+        Authorization: 'Bearer ' + token,}
+    
+       
+      }
+      )
+      
+        .then((res)=>{
+          setDetail(res.data[0])
+          console.log(res.data);
+        })
+         
+      .catch(
+          (err)=>{
+              console.log(err)
+           
+          })
+        // }
+          },[] )
+    
+    
+
 
 
 async function handleSubmit(e) {
@@ -45,7 +80,7 @@ return
 }
   try {
    await axios.post(`/answers/all-answer/${questionid}`,{
-     
+    
     answer:answervalue,
     questionid: questionid
  
@@ -53,9 +88,11 @@ return
     { headers:{
       Authorization: 'Bearer ' + token,}
     }
+   
 
   );
-  
+  forceUpdate()
+  setTimeout(() => { window.location.reload();}, 3000)
     
 alert("you are posting your answer")
   
@@ -66,34 +103,42 @@ alert("you are posting your answer")
 }
 
 
-
+// const notMaps = values.filter(item => item.answers); 
+// const Maps = values.filter(item => !item.answers);
+// console.log(notMaps);
+// console.log(Map);
 
 
   return (
   <Layout>
   
 <div className={classes.answer_container}>
-<h4>Questions</h4>
+<div className={classes.title}>
+<h4>Questions title:  <p>{details.title}</p></h4>
+<h4>Questions description: {details.description}</h4>
+
+
+
+      </div>
+
+<h2><img src={QA} width={35} alt="" />Answer From The Community</h2>
+
 <div className={classes.one_question}>
-{values?.map((value, i) => (
- <div>
-  
-
-<p>{value.title}</p>
-<p>{value.description}</p>
-<h3>Answer From The Community</h3>
-    
-
+  <div className={classes.all_answer}>
+{values.map((value, i) => (
+ <div key={Map.id}>
   <div className={classes.username}> 
   <div>
-      <VscAccount size={40}/><br />
+      <VscAccount className={classes.icon} size={40}/><br />
       <p>{value.username}</p>
       </div>
-      <div>{value.answer}</div>
+      <div className={classes.answer}>{value.answer}</div>
       </div>
       </div>
+      
 
     ))} 
+    </div>
     <div className={classes.form}>
 <form onSubmit={handleSubmit}  action="">
             <div className={classes.public}>
@@ -103,7 +148,7 @@ alert("you are posting your answer")
 
             <div className={classes.newAnswer_Des}>
               {" "}
-              <input ref={answerDom} type="text" placeholder="Your Answer.." />
+              <textarea ref={answerDom}  placeholder="Your Answer.." className={classes.textarea}></textarea>
             </div>
 
             <button> Post your Answer</button>

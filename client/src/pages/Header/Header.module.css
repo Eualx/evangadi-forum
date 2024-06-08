@@ -4,24 +4,25 @@
     /* width: 960px; */
     align-items: center;
     margin-bottom: 50px;
+    padding-top: 30px;
    
 }
-.logo{
-   padding-top: 10px;
-}
+
 .right_container{
     display: flex;
     justify-content: space-between;
     gap: 20px;
+   
 }
 button{
     background-color:#0b5ed7 ;
     border: none;
-    padding: 5px 30px;
-    width: 150px;
-    border-radius: 3px;
+    padding: 8px 10px;
+    width: 120px;
+    border-radius: 6px;
 }
 a{
     text-decoration: none;
     color: black;
+    margin-top: 15px;
 }
