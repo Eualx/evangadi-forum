@@ -5,36 +5,46 @@ import classes from "./Register.module.css";
 import { FaEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa";
 import Layout from "../Layout/Layout";
+
 function Register() {
+
+
+
+  // error
   const [error, setError] = useState("");
 
+// navigation 
   const navigate = useNavigate();
-
+// use ref to hold the value
   const usernameDom = useRef();
   const firstnameDom = useRef();
   const lastnameDom = useRef();
   const emailDom = useRef();
   const passwordDom = useRef();
-
+ // password visiblity
   const [visible, setVisible] = useState(false);
   const handleVisblity = () => {
     setVisible(!visible);
   };
+
+  // switch login n register page
   const [register, setRegister] = useState(true);
 
   const registerpage = () => {
     setRegister(!register);
   };
+
+  // to handle submit for registeration button
   async function handleSubmit(e) {
     e.preventDefault();
 
     setError("");
 
-    const usernamevalue = usernameDom.current.value;
-    const firstnamevalue = firstnameDom.current.value;
-    const lastnamevalue = lastnameDom.current.value;
-    const emailvalue = emailDom.current.value;
-    const passwordvalue = passwordDom.current.value;
+    const usernamevalue = usernameDom.current.value.trim();
+    const firstnamevalue = firstnameDom.current.value.trim();
+    const lastnamevalue = lastnameDom.current.value.trim();
+    const emailvalue = emailDom.current.value.trim();
+    const passwordvalue = passwordDom.current.value.trim();
     if (
       !usernamevalue ||
       !firstnamevalue ||
@@ -46,6 +56,7 @@ function Register() {
       return;
     }
 
+
     try {
       await axios.post("/users/register", {
         username: usernamevalue,
@@ -54,8 +65,7 @@ function Register() {
         email: emailvalue,
         password: passwordvalue,
       });
-      alert("registerd successfully. please login");
-
+     
       setRegister(!register);
     } catch (error) {
       // alert("something went wrong");
@@ -64,6 +74,8 @@ function Register() {
     }
   }
 
+
+  // to handle submit for login page button
   async function handleSubmit2(e) {
     e.preventDefault();
     setError("");
@@ -82,7 +94,8 @@ function Register() {
       // alert("login sucessfully.");
       localStorage.setItem("token", data.token);
       console.log(data);
-      navigate("/");
+      // navigate("/");
+      setTimeout(() => { navigate('/'); window.location.reload(); setProcess(false)}, 2000)
     } catch (error) {
       alert(error?.response?.data?.msg);
       console.log(error.response.data);
@@ -132,9 +145,11 @@ function Register() {
                   {" "}
                   Create an account?
                 </Link>
+<br />
+                <Link to=""> Forget password?</Link>
               </form>
             </div>
-          ) : (
+          ) : ( 
             <div className={classes.left_Signup_container}>
               <form onSubmit={handleSubmit} action="">
                 <h4>Join the network</h4>
@@ -146,7 +161,8 @@ function Register() {
                 </p>
                 <p></p>
                 <div>
-                  <input ref={emailDom} type="email" placeholder="Email" />
+                  <input ref={emailDom} type="email" placeholder="Email" 
+                  />
                 </div>{" "}
                 <br />
                 <div className={classes.first_last_name}>
@@ -155,6 +171,7 @@ function Register() {
                       ref={firstnameDom}
                       type="text"
                       placeholder="First Name"
+                      
                     />
                   </div>
                   <br />
@@ -163,6 +180,7 @@ function Register() {
                       ref={lastnameDom}
                       type="text"
                       placeholder="Last Name"
+                     
                     />
                   </div>
                 </div>
@@ -172,6 +190,7 @@ function Register() {
                     ref={usernameDom}
                     type="text"
                     placeholder="User Name"
+                    
                   />
                 </div>
                 <br />
@@ -180,6 +199,7 @@ function Register() {
                     ref={passwordDom}
                     type={!visible ? "password" : "text"}
                     placeholder="Password "
+                    
                   />
                   <label htmlFor="">
                     {" "}
@@ -190,19 +210,21 @@ function Register() {
                     )}
                   </label>
                 </div>
-                <button type="submit">Agree and Join</button>
                 <br />
-                {error && <small style={{ color: "red" }}>{error}</small>}{" "}
-                <br />I agree to the{" "}
+                <small>I agree to the{" "}</small>
                 <span>
                   <a href="">Privacy policy</a> and{" "}
                   <a href="">terms of serivice</a>
                 </span>
+                <button type="submit">Agree and Join</button>
                 <br />
+                {error && <small style={{ color: "red" }}>{error}</small>}{" "}
                 <br />
                 <Link onClick={registerpage} to="">
                   Already have an account?
                 </Link>
+
+                
               </form>
             </div>
           )}
@@ -216,9 +238,7 @@ function Register() {
               follow in your footsteps.     
               <br /> 
               <br />         
-              Wheather you are willing to share your
-              knowledge or you are just looking to meet mentors of your own,
-              please start by joining the network here.
+              Welcome to Evangadi Forum, your ultimate destination for finding answers and sharing knowledge. Whether you're a curious learner, an expert in a field, or someone looking for a community to engage with, our platform offers a dynamic and interactive environment where questions spark conversations and solutions emerge collaboratively.
             </p>
             <br />
 

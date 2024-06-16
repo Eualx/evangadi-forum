@@ -1,48 +1,64 @@
 .username{
-    background-color:#E8F0FE;
     display: flex;
     gap: 30px;
-    margin: 20px 100px 30px;
-    padding: 20px;
-    margin-bottom: 5px;
+    margin: 0px 100px 0px;
+    padding: 20px 40px;
+    background-color: #FAFAFA;
+    border-top: 3px solid #F1F1F1;
+  padding: 10px;
    
+}
+.all_answer{
+  margin-bottom: 20px;
+  
 }
 .form{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 680px;
     height: 300px;
+    margin-top: 30px;
     padding: 30px 20px 0px;
     color: black;
     text-decoration: none;
-    position: relative;
-    background-color: white;
-    background-color:#E8F0FE;
+    /* position: relative; */
+    background-color: #FAFAFA;
     margin: auto;
 }
-.newAnswer_Des input{
-    width: 620px;
-    padding-bottom: 100px;
-    margin-left: 20px;
-    margin-bottom: 20px;
+
+.textarea {
+  font-size: 20px;
+  width: 580px;
+  height: 150px;
+  padding: 10px;
+  margin-left:20px ;
+  overflow-y: auto; 
+  box-sizing: border-box; 
+  resize: vertical; 
+  border: none;
 }
+.form button {
+  background-color:#0B5ED7;
+  border: none;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+
 
 .public{
     text-align: center;
     padding: 10px;
     align-items: center;
+    
 }
-.all_answer {
-    scroll-margin: 20;
-    max-height: 400px; /* Adjust the height as needed */
-    overflow-y: auto;
-    border: 1px solid #ccc; 
-/* Optional: to visually separate the scrollable area */
-  padding: 10px;}
 
 .title{
     margin-left: 150px;
+    margin-right: 150px;
     padding: 20px;
+    position: sticky;
 }
+
 .answer{
     align-items: center;
     padding-top: 20px;
@@ -53,11 +69,44 @@
 h2{
     padding-left: 200px;
 }
-.textarea {
-    width: 100%; 
-    min-height: 100px; 
-    max-height: 200px;
-    overflow-y: auto; 
-    box-sizing: border-box; 
-    resize: vertical; 
+
+  
+  .like{
+    margin-right: 5px;
+  }
+  .dislike{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .delete{
+    margin-left: 5px;
+    margin-right: 5px;
+    color: red;
+  }
+ 
+  @media screen and (max-width:760px) {
+    .form{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 400px;
+        height: 300px;
+        padding: 30px 20px 0px;
+        color: black;
+        text-decoration: none;
+        position: relative;
+        margin: auto;
+    }
+    .textarea {
+      font-size: 20px;
+      width: 380px;
+      height: 100px;
+      padding: 10px;
+      margin-left:20px ;
+      overflow-y: auto; 
+      box-sizing: border-box; 
+      resize: vertical; 
+      border: none;
+    }
+    .title {
+      margin-left: 20px;
+    }
   }
